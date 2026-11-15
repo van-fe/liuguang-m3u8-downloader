@@ -1,0 +1,518 @@
+[
+  {
+    "component": "ffmpeg.wasm",
+    "file": "licenses/ffmpeg.wasm/LICENSE",
+    "sha256": "3e123e29517d76504ffce77b3f8e2ccffd4712493f27694b0aba3e376676459f",
+    "bytes": 1066
+  },
+  {
+    "component": "ffmpeg",
+    "file": "licenses/ffmpeg/COPYING.GPLv2",
+    "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+    "bytes": 18092
+  },
+  {
+    "component": "ffmpeg",
+    "file": "licenses/ffmpeg/COPYING.GPLv3",
+    "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "bytes": 35147
+  },
+  {
+    "component": "ffmpeg",
+    "file": "licenses/ffmpeg/COPYING.LGPLv2.1",
+    "sha256": "b634ab5640e258563c536e658cad87080553df6f34f62269a21d554844e58bfe",
+    "bytes": 26526
+  },
+  {
+    "component": "ffmpeg",
+    "file": "licenses/ffmpeg/COPYING.LGPLv3",
+    "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+    "bytes": 7651
+  },
+  {
+    "component": "ffmpeg",
+    "file": "licenses/ffmpeg/LICENSE.md",
+    "sha256": "cb48bf09a11f5fb576cddb0431c8f5ed0a60157a9ec942adffc13907cbe083f2",
+    "bytes": 4376
+  },
+  {
+    "component": "x264",
+    "file": "licenses/x264/COPYING",
+    "sha256": "32b1062f7da84967e7019d01ab805935caa7ab7321a7ced0e30ebe75e5df1670",
+    "bytes": 17992
+  },
+  {
+    "component": "x265",
+    "file": "licenses/x265/COPYING",
+    "sha256": "d8afb1bcc7a2cfc603683b168d6987ef0a48e59e0da3693bf55c5d33b67e2b49",
+    "bytes": 18120
+  },
+  {
+    "component": "x265",
+    "file": "licenses/x265/source/dynamicHDR10/LICENSE.txt",
+    "sha256": "47f15d63e82eb8a4de6e46471d5f96cf6d052fd5355944a002c3157880248b69",
+    "bytes": 849
+  },
+  {
+    "component": "x265",
+    "file": "licenses/x265/source/dynamicHDR10/json11/LICENSE.txt",
+    "sha256": "950e288a2548cb33f6a90d23958806b0803f510ab17c600d661619a73ae3a6c8",
+    "bytes": 1057
+  },
+  {
+    "component": "libvpx",
+    "file": "licenses/libvpx/LICENSE",
+    "sha256": "8267348d5af1262c11d1a08de2f5afc77457755f1ac658627dd9acf71011d615",
+    "bytes": 1537
+  },
+  {
+    "component": "libvpx",
+    "file": "licenses/libvpx/PATENTS",
+    "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c",
+    "bytes": 1436
+  },
+  {
+    "component": "libvpx",
+    "file": "licenses/libvpx/third_party/googletest/src/LICENSE",
+    "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+    "bytes": 1475
+  },
+  {
+    "component": "libvpx",
+    "file": "licenses/libvpx/third_party/libwebm/LICENSE.TXT",
+    "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf",
+    "bytes": 1496
+  },
+  {
+    "component": "libvpx",
+    "file": "licenses/libvpx/third_party/libwebm/PATENTS.TXT",
+    "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c",
+    "bytes": 1436
+  },
+  {
+    "component": "libvpx",
+    "file": "licenses/libvpx/third_party/libyuv/LICENSE",
+    "sha256": "2b2cc1180c7e6988328ad2033b04b80117419db9c4c584918bbb3cfec7e9364f",
+    "bytes": 1506
+  },
+  {
+    "component": "libvpx",
+    "file": "licenses/libvpx/third_party/x86inc/LICENSE",
+    "sha256": "719d8fa235f2068e0ae6d6a7dceb0a7720d7840f0f0ebed29957989e6ded3cd8",
+    "bytes": 936
+  },
+  {
+    "component": "lame",
+    "file": "licenses/lame/COPYING",
+    "sha256": "bfe4a52dc4645385f356a8e83cc54216a293e3b6f1cb4f79f5fc0277abf937fd",
+    "bytes": 25284
+  },
+  {
+    "component": "lame",
+    "file": "licenses/lame/LICENSE",
+    "sha256": "7a40cbd8818c57e5285e83c772a459a996d1662c824a879836b97b473c07cae4",
+    "bytes": 487
+  },
+  {
+    "component": "lame",
+    "file": "licenses/lame/debian/copyright",
+    "sha256": "1f27f9f698183275bd615c1140b7bf6e498750e9280597c6eb39790e54ae809b",
+    "bytes": 2303
+  },
+  {
+    "component": "ogg",
+    "file": "licenses/ogg/COPYING",
+    "sha256": "d2ab5758336489da61c12cc5bb757da5339c4ae9001f9bb0562b4370249af814",
+    "bytes": 1466
+  },
+  {
+    "component": "theora",
+    "file": "licenses/theora/COPYING",
+    "sha256": "8417fad7da775735564e209484a2e011e0fa201e94f01fdbee6e4977e478e6fc",
+    "bytes": 1470
+  },
+  {
+    "component": "theora",
+    "file": "licenses/theora/LICENSE",
+    "sha256": "654a0238f789f4435c4818f50005b141d013c5a09a31d861efc1d0d67ba975a4",
+    "bytes": 964
+  },
+  {
+    "component": "theora",
+    "file": "licenses/theora/debian/copyright",
+    "sha256": "569a278f04a441586b126647bc36b7eb3c5548ca906b1b440c48af109e3f334a",
+    "bytes": 1687
+  },
+  {
+    "component": "opus",
+    "file": "licenses/opus/COPYING",
+    "sha256": "8338ce8d922bb4416ce3dd1e5680173332435e3f0755007ac7801ccd674fe682",
+    "bytes": 1928
+  },
+  {
+    "component": "opus",
+    "file": "licenses/opus/LICENSE_PLEASE_READ.txt",
+    "sha256": "7efb4989e0cd1b256229bdf2f09300c5d14e35db0e7476bfb87fac243498273d",
+    "bytes": 703
+  },
+  {
+    "component": "vorbis",
+    "file": "licenses/vorbis/COPYING",
+    "sha256": "414bfd5d8ee64395a9231d6386188461500052c10915bee08b18bfa9489dd0b3",
+    "bytes": 1470
+  },
+  {
+    "component": "vorbis",
+    "file": "licenses/vorbis/debian/copyright",
+    "sha256": "444abda2c71469088a9e850dc748d4bcd04ca6e02213029da636c36e9eb9db3a",
+    "bytes": 1691
+  },
+  {
+    "component": "zlib",
+    "file": "licenses/zlib/contrib/dotzlib/LICENSE_1_0.txt",
+    "sha256": "36266a8fd073568394cb81cdb2b124f7fdae2c64c1a7ed09db34b4d22efa2951",
+    "bytes": 1359
+  },
+  {
+    "component": "libwebp",
+    "file": "licenses/libwebp/COPYING",
+    "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf",
+    "bytes": 1496
+  },
+  {
+    "component": "libwebp",
+    "file": "licenses/libwebp/PATENTS",
+    "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c",
+    "bytes": 1436
+  },
+  {
+    "component": "freetype",
+    "file": "licenses/freetype/docs/LICENSE.TXT",
+    "sha256": "fd056de4196903a676208ef58cfddafc7d583d1f28fa2e44c309cf84a59e62fb",
+    "bytes": 1743
+  },
+  {
+    "component": "freetype",
+    "file": "licenses/freetype/src/tools/no-copyright",
+    "sha256": "d6af741b499305740ff78c8242045e7aa0e39495a9a3f817080bec3e5b1f8eba",
+    "bytes": 1220
+  },
+  {
+    "component": "freetype",
+    "file": "licenses/freetype/src/tools/update-copyright",
+    "sha256": "7c72da9b750357920597e8a9042a242945268d217af9b48ec69b30fa4d56c699",
+    "bytes": 388
+  },
+  {
+    "component": "freetype",
+    "file": "licenses/freetype/src/tools/update-copyright-year",
+    "sha256": "43dee7d2296fe2610aa653e6bc2956a284bab402e2d0a84e62707baf21517065",
+    "bytes": 3596
+  },
+  {
+    "component": "fribidi",
+    "file": "licenses/fribidi/COPYING",
+    "sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+    "bytes": 26440
+  },
+  {
+    "component": "harfbuzz",
+    "file": "licenses/harfbuzz/COPYING",
+    "sha256": "4345e1735f8bc6d812fed5180cabb5a5e88a4109d332652f2a45c13cfa5ee692",
+    "bytes": 1829
+  },
+  {
+    "component": "harfbuzz",
+    "file": "licenses/harfbuzz/src/ms-use/COPYING",
+    "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+    "bytes": 1141
+  },
+  {
+    "component": "harfbuzz",
+    "file": "licenses/harfbuzz/test/shape/data/aots/COPYING",
+    "sha256": "f55f74bf740db07bb032a90aa74af4307adea3d489c1ccba12453cf0c0a764cb",
+    "bytes": 593
+  },
+  {
+    "component": "harfbuzz",
+    "file": "licenses/harfbuzz/test/shape/data/in-house/COPYING",
+    "sha256": "9b35b8485f69cd298fccbb3c40a827dc06cf1185553bef827903497d2944a8d7",
+    "bytes": 4370
+  },
+  {
+    "component": "harfbuzz",
+    "file": "licenses/harfbuzz/test/shape/data/text-rendering-tests/COPYING",
+    "sha256": "d24039e4d22c9bc72096f6174374539d92a3d6e1163938546ec59179fe095e6f",
+    "bytes": 584
+  },
+  {
+    "component": "libass",
+    "file": "licenses/libass/COPYING",
+    "sha256": "f7e30699d02798351e7f839e3d3bfeb29ce65e44efa7735c225464c4fd7dfe9c",
+    "bytes": 755
+  },
+  {
+    "component": "zimg",
+    "file": "licenses/zimg/COPYING",
+    "sha256": "7637386b5f81e8a719ca336233149005e5fa28b5e6054ea7b67de49355b0ad40",
+    "bytes": 484
+  },
+  {
+    "component": "zimg",
+    "file": "licenses/zimg/test/extra/musl-libm/COPYRIGHT",
+    "sha256": "15d9afbf84041872b4d840ed7d165d3eee786ff3f97e703b10467c259ff4e7d9",
+    "bytes": 6166
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/LICENSE",
+    "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86",
+    "bytes": 5093
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/site/source/docs/introducing_emscripten/emscripten_license.rst",
+    "sha256": "85f7f43dc74143fa6a040d672cfbae388101976d744e556b798ab4b60de5b74c",
+    "bytes": 810
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/system/include/SDL/COPYING",
+    "sha256": "c0340bf02391530fb13cf4170c31253ecd09868fa483553652699584eb4db6ae",
+    "bytes": 1031
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/system/include/SDL/SDL_copying.h",
+    "sha256": "78a79ebcbe99ee5726bdd26de8b58e806932cd9760204f2d747376a4696277d5",
+    "bytes": 939
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/system/include/fakesdl/SDL_copying.h",
+    "sha256": "6d6be784609e40e40aa4e1620f3f30968746bffa1577f5896c0ea8de3e4e838c",
+    "bytes": 72
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/system/lib/compiler-rt/LICENSE.TXT",
+    "sha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d",
+    "bytes": 16708
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/system/lib/libc/musl/COPYRIGHT",
+    "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+    "bytes": 6204
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/system/lib/libcxx/LICENSE.TXT",
+    "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+    "bytes": 16703
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/system/lib/libcxxabi/LICENSE.TXT",
+    "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+    "bytes": 16706
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/system/lib/libunwind/LICENSE.TXT",
+    "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+    "bytes": 16706
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/sounds/LICENSE.txt",
+    "sha256": "dabb2ee881522112ee70539aec179f3a639b8fc58e6a7ca06df2791fabd51537",
+    "bytes": 836
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/box2d/License.txt",
+    "sha256": "829f4dd7e3da440ed11d34ac954afc3ea90dc481a5ec6775397edf59ab41d1e5",
+    "bytes": 886
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/box2d/freeglut/COPYING",
+    "sha256": "b6593d5ec4c113a274abb85b10e8615895cb0ddb89f7912af5fe5aa8df38a275",
+    "bytes": 1439
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/bullet/COPYING",
+    "sha256": "231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c",
+    "bytes": 18002
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/bullet/LICENSE",
+    "sha256": "2a37da52f3f9134d50e5320f68854cfe2dea8708ff98336d08c60146d582eeb3",
+    "bytes": 1337
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/coremark/LICENSE.md",
+    "sha256": "9577b9c846f61fd69a0d8ac965998c6450c7d8969f71f0bb4a931b91aebad28a",
+    "bytes": 18582
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/enet/LICENSE",
+    "sha256": "f7295dd0e55e7df4048d0bc08e3f57af92ea03ee9e8c2d236885c29e4fcaa105",
+    "bytes": 1060
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/enet/docs/license.dox",
+    "sha256": "9529d38e816787221d52d7fa0638d5be19390095eb1b32c0e53e979d6e4f281b",
+    "bytes": 1094
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/freealut/COPYING",
+    "sha256": "db6a1ddf751a4eb743d640550717fe15bb5483f5238b97aa4a0145d46dc22075",
+    "bytes": 25268
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/freetype/docs/LICENSE.TXT",
+    "sha256": "f35d115efd18ec624503129dbbcc8cd14c74140e2ecb85a3411b92e7a3901a11",
+    "bytes": 1396
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/notofont/LICENSE_OFL.txt",
+    "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2",
+    "bytes": 4301
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/openjpeg/LICENSE",
+    "sha256": "db41603bdbc1a8aad4b6e51affa4357209d0e5bbafc2557ac050c62590cc800b",
+    "bytes": 1723
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/poppler/COPYING",
+    "sha256": "ab15fd526bd8dd18a9e77ebc139656bf4d33e97fc7238cd11bf60e2b9b8666c6",
+    "bytes": 17987
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/test/third_party/poppler/cmake/modules/COPYING-CMAKE-SCRIPTS",
+    "sha256": "46cde7dc11e64c78d650b4851b88f6704b4665ff60f22a1caf68ceb15e217e5b",
+    "bytes": 1327
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/third_party/closure-compiler/node-externs/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "bytes": 11358
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/third_party/leb128/LICENSE",
+    "sha256": "6d21d47a22d95b919ddeaf8b49a4697909b47310472cb7fe3ad14cf6810d3208",
+    "bytes": 1065
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/third_party/terser/LICENSE",
+    "sha256": "68335488ef8f917c0feb901ace385f8c919bc81b0b60448a92928a3769fcec8f",
+    "bytes": 1348
+  },
+  {
+    "component": "emscripten",
+    "file": "licenses/emscripten/tools/maint/add_license.py",
+    "sha256": "03c35afb85ca8b80df8e1abdd5c4d0ce29da528aa3ccbbe908645a26294fec01",
+    "bytes": 3428
+  },
+  {
+    "component": "hls.js",
+    "file": "licenses/hls.js/LICENSE",
+    "sha256": "ca8773cf798c7ed997d4dd7c8e23c348699f8d5b7462636694cc14de6cda12db",
+    "bytes": 1338
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/LICENSE.txt",
+    "sha256": "fcb07e07ac6bc8b2fcf047b50431ef4ebe5b619d7ca7c82212018309a9067426",
+    "bytes": 884
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/Xcode-iOS/Demos/data/bitmapfont/license.txt",
+    "sha256": "5059bc9c2f37b7e7a557685ae9330ecfd798537bdfde94de63a9c721c92a8856",
+    "bytes": 13091
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/Xcode/SDL/pkg-support/resources/License.txt",
+    "sha256": "218e120812f1fd02025335087d3c3f3011a86a1e13cecb7231ea137f0592b833",
+    "bytes": 909
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/build-scripts/update-copyright.sh",
+    "sha256": "417bd6f70fbabcd136b78bd60b1a675ba8d729ef485622a91fcdcad2b2592b95",
+    "bytes": 266
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/include/SDL_copying.h",
+    "sha256": "9d7995d79aacc7784b1545a7ce47940a52e0de388d847a8f86d468f5ab2a90f2",
+    "bytes": 939
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/src/hidapi/LICENSE-bsd.txt",
+    "sha256": "30eb1bef29b46f8ba7ab8b416035dbd93cb034a45481dd97815b944284582cd2",
+    "bytes": 1534
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/src/hidapi/LICENSE-gpl3.txt",
+    "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "bytes": 35147
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/src/hidapi/LICENSE-orig.txt",
+    "sha256": "fb5436aa63d1b71a8dfbf74ecaf1a5b4e1ec4df7f80074d11fec99284f69ca5f",
+    "bytes": 264
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/src/hidapi/LICENSE.txt",
+    "sha256": "7d3b087c34f35d4d538e3bcddd1ff8f66e92f9ef336881999482800ddf840913",
+    "bytes": 530
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/src/video/yuv2rgb/LICENSE",
+    "sha256": "f7d74004cc75778cae46c5f0139f244d67c07ef64cf51937e8272352197dcb18",
+    "bytes": 1480
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/test/COPYING",
+    "sha256": "d5a549e4a7b88cb696d0db15b21830061131ed361257ab399a33ca08ce0b33d5",
+    "bytes": 210
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/test/unifont-13.0.06-license.txt",
+    "sha256": "b7e8b9d8656d5216a61f48c7e62704b8aec50e8af8ca410b28fb04ea32e0f220",
+    "bytes": 4250
+  },
+  {
+    "component": "SDL2",
+    "file": "licenses/SDL2/visualtest/COPYING.txt",
+    "sha256": "dae65ccf728227eff8e10194437078a5628047b9f55d796039688e7ca8e3aa4e",
+    "bytes": 947
+  }
+]

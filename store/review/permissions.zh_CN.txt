@@ -1,0 +1,29 @@
+单一用途
+帮助用户发现当前网页中有权下载的 HLS/M3U8 视频，或手动提供媒体链接，在本机完成预览、下载、合并及 MP4 保存。视频命名、保存设置和用户授权后的本地改名均服务于这一视频保存用途。
+
+webRequest
+在用户浏览的 HTTP/HTTPS 网页中观察媒体请求地址和响应 Content-Type，识别 HLS 清单及 X 媒体资源。只为「发现视频」提供来源，不使用此权限建立浏览画像、投放广告或向开发者上传浏览记录。
+
+downloads
+把本机生成的 MP4 交给 Chrome 下载管理器保存，跟踪本扩展任务的完成或中断状态，并提供「在文件夹中显示」。用户要求改名时读取对应下载记录的实际文件名和大小，以匹配用户授权文件夹中的目标文件。
+
+storage
+在本机保存下载设置和诊断记录，并在浏览器会话内保存按标签页区分的视频来源、任务状态、预览及保存关联。使用 local/session 存储，不使用 Chrome Sync，不向开发者服务器同步这些内容。
+
+unlimitedStorage
+为本地视频分片、临时音视频文件和合并结果提供扩展专用 OPFS 磁盘缓存，支持大型视频。缓存按任务清理；权限不代表磁盘无限，也不用于扫描用户其他文件。
+
+offscreen
+弹窗关闭后继续下载和处理视频，在离屏文档中运行随包提供的 FFmpeg WebAssembly、使用本地文件缓存并生成供 Chrome 保存的 Blob。
+
+scripting
+在用户点击「重新检测」时补充注入本地扫描脚本；在用户选择「使用网页标题」时读取当前页面 document.title。X 页面重新检测使用随包提供的观察器，不执行远程下载的脚本。
+
+tabs
+识别当前标签页、网页 URL 与标题，把检测结果关联到正确页面，并在标签页导航或关闭时清理该页面来源。也用于打开本扩展的预览页面，不用于浏览记录分析。
+
+host_permissions
+该工具用于不同网站上的用户授权媒体，无法预先枚举站点。HLS 播放列表、分片、音轨和密钥常分布在跨域 CDN；HTTP/HTTPS 主机访问还用于本机用户服务器和 X 官方公开嵌入端点。访问用于视频检测、预览和用户发起的下载，不访问其他协议，也不绕过网站鉴权。
+
+远程代码声明
+No, I am not using remote code. All extension JavaScript, the HLS preview library, FFmpeg worker code, and the WebAssembly core are included in the submitted package. Network requests retrieve website/media metadata, playlists, media bytes, or AES-128 media keys as data; none of these responses is executed as extension code. The X page observer is a locally bundled content script. wasm-unsafe-eval permits the packaged WebAssembly core, not remotely hosted JavaScript.

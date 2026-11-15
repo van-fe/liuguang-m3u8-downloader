@@ -1,0 +1,10 @@
+流光 Chrome 应用商店图片
+
+版本：1.2.11
+
+推荐按 01→04 顺序上传四张 1280×800 截图。icon-128.png 为带透明留白的商店图标，请在发布包 assets/icon128.png 中使用同一文件。promo-440x280.png 与 marquee-1400x560.png 为可选宣传图。
+
+截图中的界面直接来自实际扩展；raw/ 中保留原始截图。界面内视频来自 FFmpeg 自生成的测试图形与正弦音频，不包含第三方影视素材。外围排版为商店展示说明，不是新增产品界面。
+
+重新生成：先构建最终扩展，然后运行 node scripts/store-visuals.mjs。
+官方尺寸依据：https://developer.chrome.com/docs/webstore/images

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "target_version": "1.2.11",
+  "version_source": "package.json#version",
+  "prepared_date": "2026-11-15",
+  "locale": "zh_CN",
+  "language_label": "中文（简体）",
+  "title": "流光 · M3U8 视频下载",
+  "summary": "发现网页中可下载的 HLS/M3U8 视频，支持 MP4 直链与 X 视频解析；先预览，再在本机下载、合并和保存。",
+  "description": "流光帮助你发现网页中的 HLS/M3U8 视频，并在本机下载、合并为 MP4。也支持手动添加 MP4 直链和解析部分 X（Twitter）视频。请仅下载自行创作或已经获得下载授权的内容。\n\n使用方法\n1. 打开视频网页并播放视频。\n2. 打开流光，在「发现视频」中查看已检测到的视频源，可先预览。\n3. 确认名称后点击「下载 MP4」，在「下载任务」中查看进度和保存结果。\n\n主要功能\n• 自动检测 HLS/M3U8 请求，也支持粘贴 M3U8、MP4 或 X 帖子链接。\n• 多个视频独立并行下载，同时下载任务数和排队数量均不设固定上限。\n• 单个 HLS 视频可设置分片并发和失败重试，支持独立音轨及普通 AES-128 分片。\n• 在保存前编辑文件名或使用当前网页标题；已完成文件可在用户授权文件夹后原地改名。\n• 可选择按 Chrome 下载设置自动保存，或在保存时自行选择位置。\n• 关闭插件弹窗后继续处理；浏览器需要保持运行。\n• 本机诊断日志可按需导出，帮助排查下载或合并问题。\n\n本机处理与权限\n为了发现当前网页的视频，流光会在本机处理网页标题、网页与媒体地址、视频元数据，以及与检测有关的媒体请求和播放事件。视频下载、解密和合并在浏览器内完成，不上传到开发者服务器，没有广告、统计或行为分析服务。\n\n下载请求会连接视频所属网站；浏览器可能按该网站的规则附带已有身份凭据。流光不读取密码或 Cookie 值，也不要求导出 Cookie 或粘贴账号令牌。X 公开帖子解析可能请求 X 官方公开嵌入接口。文件改名只处理用户主动授权的文件夹与目标文件。\n\n使用范围\n• 仅用于你有权下载的媒体；能够观看不代表已经获得下载授权。\n• 不支持 DRM、SAMPLE-AES、持续录制直播，不绕过付费墙、登录或其他访问限制。\n• 本版本不提供 YouTube 下载功能；B 站 DASH 视频也不在当前支持范围内。\n• 登录、地域、短时签名或站点规则可能影响可用性，不能保证任意网站或任意视频均能下载。\n• MP4 合并保留原有音视频编码，不提高原片画质。\n• 实际并行处理能力和可处理大小受浏览器、网络、可用内存及磁盘空间影响；重载扩展或退出 Chrome 会中断未完成任务。\n\n隐私政策和支持\n隐私政策：https://van-fe.github.io/liuguang-m3u8-downloader/privacy.html\n问题反馈：https://github.com/van-fe/liuguang-m3u8-downloader/issues\n\n流光不是 X、Twitter 或 Google 的官方产品，也不表示得到这些平台的认可。",
+  "recommended_category": "Tools",
+  "recommended_category_zh": "工具",
+  "distribution_recommendation": "先以 Unlisted（不公开列出）提交并完成独立安装验证，再按发布者决定改为 Public；不要将 Unlisted 误认为免审核。",
+  "price": "Free",
+  "payment_features": false,
+  "publisher": {
+    "display_name": "van-fe",
+    "homepage_url": "https://van-fe.github.io/liuguang-m3u8-downloader/",
+    "support_url": "https://github.com/van-fe/liuguang-m3u8-downloader/issues",
+    "privacy_policy_url": "https://van-fe.github.io/liuguang-m3u8-downloader/privacy.html",
+    "source_url": "https://github.com/van-fe/liuguang-m3u8-downloader",
+    "public_email": null,
+    "external_urls_require_live_validation": true
+  },
+  "counts": {
+    "title_codepoints": 14,
+    "summary_codepoints": 57,
+    "description_codepoints": 1127
+  }
+}

@@ -1,0 +1,45 @@
+Chrome Web Store 隐私实践填写建议
+目标版本：1.2.11
+
+以下建议以当前代码实际行为为基础。发布者应在送审前核对最终安装包与已公开的隐私政策，并亲自完成后台认证。数据仅在本机处理也属于需要披露的处理，不能选择“完全不处理用户数据”。
+
+[不勾选] Personally identifiable information
+No account, registration form, identity profile or address-book collection. Page titles, post text and local filenames may incidentally contain names; those are handled only as website/file content for the disclosed feature, not extracted as identity profiles.
+
+[不勾选] Health information
+No health-specific collection or processing.
+
+[不勾选] Financial and payment information
+No payment collection or payment features.
+
+[勾选] Authentication information
+Some media URLs contain access signatures/tokens and are retained in local session task/source state. Media requests may carry browser-managed site credentials to the original media host. The extension does not read password or Cookie values and does not export them; X public embed requests use credentials:omit.
+
+[不勾选] Personal communications
+No email, chat or private-message feature or collection.
+
+[不勾选] Location
+No geolocation API, location inference or location profile.
+
+[勾选] Web history
+Current page URLs/titles and related media URLs are observed locally to show media sources for each page. This is not a developer-uploaded browsing history service.
+
+[勾选] User activity
+Limited to media-request observation and page resource/playback events needed for media discovery. No analytics, clickstream, keystroke logging, mouse-position logging, or advertising profile.
+
+[勾选] Website content
+Page titles, relevant media metadata, manifests, video/audio bytes and keys are processed for discovery, preview, download and local MP4 output. Local file names, paths, sizes and selected directory handles are processed only for saving and user-authorized renaming.
+
+填写说明
+• Authentication information 的勾选范围是媒体签名地址和按浏览器规则发送的站点凭据，不表示扩展读取密码或 Cookie 值。不要改写成“收集密码”。
+• User activity 仅指发现媒体所需的请求及播放事件观察，不是使用统计或行为追踪。
+• 没有注册、支付、位置、邮件或私信功能。若将来添加广告、统计、账号或上传服务，必须同步修改代码说明、隐私政策和后台勾选。
+• 不会把本机数据上传开发者后端；资源请求仍会连接视频所属站点和 X 官方公开接口。不要声称“完全离线”或“完全不联网”。
+• 用户主动导出的诊断 JSON 由用户决定是否分享；扩展不自动上传。诊断记录不包含网页/视频地址、标题、域名、帖子编号、账号凭据或本地路径。
+
+三项 Limited Use 认证
+当前版本可以按代码事实勾选“不出售或在允许情形外转移数据”“不用于与单一用途无关的目的”“不用于信用或贷款判断”。这份材料不是代替发布者签署认证。
+
+政策来源
+https://developer.chrome.com/docs/webstore/cws-dashboard-privacy
+https://developer.chrome.com/docs/webstore/program-policies/user-data-faq

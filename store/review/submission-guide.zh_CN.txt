@@ -1,0 +1,29 @@
+Chrome 应用商店提交操作单
+目标版本：1.2.11
+发布者：van-fe
+
+本目录提供可粘贴的资料，不代表已经上传、签署开发者协议或提交审核。
+
+1. 在 Chrome Developer Dashboard 注册/登录开发者账号，按页面要求完成注册费、联系方式和两步验证。不要把账号密码、恢复码或验证码放入这些文件。
+2. 确认最终发布 ZIP 根目录有 manifest.json；选用根目录发布说明指定的商店专用 ZIP，而不是把整个资料文件夹上传成插件。
+3. Store listing：标题使用 store/listing/title.txt，摘要核对安装包 manifest.description，详细描述使用 store/listing/description.zh_CN.txt；分类建议 Tools，语言中文（简体）。不要为堆砌关键词改成长标题。
+4. 图片：上传 store/assets/icon-128.png；按顺序上传 screenshot-01 到 screenshot-04 的 1280×800 文件。440×280 小宣传图和 1400×560 横幅是可选素材，已经准备不等于必须填。
+5. Privacy practices：单一用途、逐项权限理由和远程代码声明见 permissions.zh_CN.txt / dashboard-fields.json；数据类别见 data-practices.zh_CN.txt。请不要选“完全不处理用户数据”。发布者核对事实后亲自完成 Limited Use 认证。
+6. 隐私政策 URL 填 https://van-fe.github.io/liuguang-m3u8-downloader/privacy.html 。送审前用无登录浏览器确认能通过 HTTPS 公开打开，不能填写本地文件地址或要求登录的页面。
+7. Homepage 可填 https://van-fe.github.io/liuguang-m3u8-downloader/ ，Support URL 可填 https://github.com/van-fe/liuguang-m3u8-downloader/issues 。开发者公开邮箱仅使用发布者明确同意公开的地址；不要从登录账号自动推断。
+8. Reviewer notes 使用 reviewer-notes.en.txt。公开演示页为 /demo/；它只使用自生成且明确允许测试下载的媒体。无需提供账号、Cookie、会员或访问令牌。
+9. Distribution：建议初次选择 Unlisted（不公开列出），审核和独立安装验证后再决定 Public。Unlisted 仍需商店审核。地区、Trader/Non-trader 身份、开发者姓名和地址等账号信息应由发布者按真实情况填写，不能用这份材料代为认定。
+10. 在最终提交前核对版权用途、第三方许可/对应源码、隐私政策和数据声明一致，确认功能与截图相符。发布包、隐私页面、源码和联系地址应使用同一正式版本。
+11. 最后由发布者点击 Submit for review。若要暂缓公开，使用控制台提供的延迟发布选项；送审和公开发布属于不同操作。
+
+需发布者确认的账号事实
+• 发布者法律身份与可接收商店通知的账号联系方式。
+• 公开联系渠道、分发地区及免费/收费安排（当前代码没有付费或广告功能）。
+• 开源分发选择与第三方许可责任。
+• 各项数据认证及最终送审。
+
+官方入口
+https://chrome.google.com/webstore/devconsole
+https://developer.chrome.com/docs/webstore/publish
+https://developer.chrome.com/docs/webstore/cws-dashboard-listing
+https://developer.chrome.com/docs/webstore/cws-dashboard-privacy

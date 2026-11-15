@@ -1,0 +1,15 @@
+node_modules/
+dist/
+test-results/
+work/
+.test-profile/
+.test-profile-chrome/
+.large-test-profile/
+.site-test-profile*/
+.x-test-profile*/
+.test-profile*/
+.large-test-profile*/
+.filename-e2e*/
+.cache/
+store/third-party/archives/
+store/third-party/*.zip

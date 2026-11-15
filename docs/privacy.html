@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>隐私政策 · 流光 M3U8 视频下载</title>
+  <meta name="description" content="流光扩展如何在本机处理网页媒体、下载任务、文件夹授权和诊断数据。">
+  <style>
+    :root{color-scheme:light;font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;color:#233f38;background:#f5f7f0}*{box-sizing:border-box}body{margin:0;padding:44px 22px}main{max-width:880px;margin:auto;background:#fffefa;border:1px solid #e0e7da;border-radius:22px;padding:clamp(24px,5vw,54px)}.eyebrow{font-size:12px;letter-spacing:.12em;color:#167d6f;font-weight:700}h1{font-size:clamp(28px,5vw,40px);margin:12px 0}h2{font-size:21px;margin-top:34px}h3{font-size:17px;margin-top:25px}p,li,td,th{font-size:15px;line-height:1.85}a{color:#117669;text-underline-offset:3px}.meta{color:#68796f;font-size:13px}.lead{font-size:17px}.note{background:#eef5eb;border-left:3px solid #238575;padding:16px 20px;border-radius:5px}table{border-collapse:collapse;width:100%;margin:16px 0}td,th{text-align:left;border-bottom:1px solid #e1e7dc;padding:11px 9px;vertical-align:top}th{background:#f2f5ec}code{overflow-wrap:anywhere}.links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:28px}.english{border-top:1px solid #dce5d6;margin-top:46px;padding-top:25px}footer{margin-top:34px;color:#708074;font-size:12px}@media(max-width:520px){body{padding:12px}main{border-radius:14px}table{display:block;overflow-x:auto}}
+  </style>
+</head>
+<body><main>
+  <div class="eyebrow">LIUGUANG · PRIVACY</div>
+  <h1>隐私政策</h1>
+  <p class="meta">适用产品：流光 · M3U8 视频下载　发布者：van-fe<br>生效及更新日期：2026 年 11 月 15 日</p>
+  <nav class="links"><a href="https://van-fe.github.io/liuguang-m3u8-downloader/">项目主页</a><a href="https://github.com/van-fe/liuguang-m3u8-downloader">查看源码</a><a href="https://github.com/van-fe/liuguang-m3u8-downloader/issues">联系与反馈</a><a href="#english" lang="en">English</a></nav>
+  <p class="lead">流光用于识别网页上的 HLS / M3U8 和 X 视频，并把你选择的媒体保存为本地 MP4。下载、解密、合并和文件处理都在你的浏览器中进行。</p>
+  <div class="note">本扩展没有开发者运营的上传、统计或广告服务器，不出售用户数据，不把浏览记录、视频或本地文件发送给开发者。为了检测和下载，扩展仍会在本机处理网页与媒体信息，并向资源所属网站发送必要请求。</div>
+  <h2>1. 会处理哪些信息</h2>
+  <table><thead><tr><th>信息</th><th>用途与处理位置</th></tr></thead><tbody>
+    <tr><td>网页标题、当前标签页、网页及媒体 URL、视频清单、媒体类型、画质和播放资源信息</td><td>识别视频、按页面显示检测结果、预览和下载。检测来自网页资源请求、DOM 中的媒体链接和必要的播放事件，均在本机处理；不会用于建立浏览画像。</td></tr>
+    <tr><td>下载任务名称、进度、下载 ID、实际文件名、路径和文件大小</td><td>显示任务、命名与定位文件，以及用户主动发起的本地改名。任务状态保存在当前浏览器会话。</td></tr>
+    <tr><td>签名 URL 中可能含有的临时访问参数、源站返回的 AES-128 密钥</td><td>仅用于读取你选择的媒体和在本机解密普通 AES-128 HLS。不记录到诊断导出，不传给开发者。不支持 DRM。</td></tr>
+    <tr><td>浏览器管理的站点凭据</td><td>媒体请求可能按浏览器规则向原始资源网站携带其自身 Cookie 等凭据。扩展不使用 cookies 权限读取、导出 Cookie 或密码；不会把账户凭据交给第三方解析服务。</td></tr>
+    <tr><td>用户主动授权的文件夹句柄</td><td>仅为已下载文件原地改名而保存至扩展的 IndexedDB，不自动扫描文件夹，不上传其内容。</td></tr>
+    <tr><td>下载设置及技术诊断</td><td>设置和最近 10 次下载的技术日志保存在本机。日志会过滤网页/视频地址、域名、标题和凭据；日志不包含媒体文件，也不会自动发送。</td></tr>
+  </tbody></table>
+  <h2>2. 数据会发往哪里</h2>
+  <p>网络请求仅用于向媒体资源所属网站及其 CDN 读取视频、清单、分片、音频和密钥。解析公开 X 帖子链接时，会向 X 官方公开嵌入接口 <code>cdn.syndication.twimg.com</code> 请求该帖子信息，这一步不携带 X 账户 Cookie。请求会使接收网站正常获知 IP、请求的资源及浏览器按规则携带的请求信息，接收方依据自身政策处理。</p>
+  <p>扩展不设置代理或第三方视频解析后端，不把用户的数据用于广告、出售、信用评估或与功能无关的分析。资源使用 HTTPS 时由浏览器加密传输；用户选择 HTTP 资源时，请求遵循该资源的 HTTP 协议。</p>
+  <p>当你主动打开项目网站、源码或反馈页面时，由 GitHub 托管这些页面。相关访问适用 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隐私声明</a>；扩展不会向这些页面附带浏览记录、媒体 URL、凭据或本地文件。</p>
+  <h2>3. 本机保存多久</h2>
+  <ul>
+    <li>设置使用 <code>chrome.storage.local</code>，直到被修改或扩展被卸载；不使用 Chrome 同步存储。</li>
+    <li>检测结果和任务使用 <code>chrome.storage.session</code>。页面导航或关闭会清理该页的检测结果，浏览器会话结束后由 Chrome 清理会话存储。已结束任务最多保留 30 条；所有进行中的任务均保留。</li>
+    <li>原生下载关联在完成后删除，遗留关联最多保留 10 分钟。预览和改名请求是会话内临时信息，不作为长期历史记录。</li>
+    <li>技术诊断最多保留最近 10 次，可在「下载设置 → 清除日志」删除。导出 JSON 是用户主动保存的本地文件。</li>
+    <li>分片及临时 MP4 位于扩展的 OPFS 缓存。任务保存完成、取消或失败时清理；异常退出的遗留缓存在下次下载引擎加载时清理。</li>
+    <li>本地目录授权句柄保存在 IndexedDB，直到扩展数据被清除或卸载。Chrome 也可能撤销临时权限并要求再次授权。</li>
+  </ul>
+  <h2>4. 你可以怎样控制</h2>
+  <p>下载必须由你点击发起。你可取消、移除任务，清空检测列表或任务列表，删除诊断日志，并在 Chrome 扩展管理页限制网站访问或停用/卸载扩展。限制站点权限会影响自动检测及跨域下载。卸载或清除扩展数据会移除其本机设置和缓存，但不会删除你已保存的 MP4、诊断导出文件或 Chrome 自身的下载历史。</p>
+  <p>本地改名必须先由你选择并授权视频所在文件夹；系统授权取消或拒绝时不会提交改名。反馈问题时，请自行移除视频签名地址、账号信息和本地路径；GitHub Issues 是公开的，不要提交私密媒体或凭据。</p>
+  <h2>5. 有限使用承诺</h2>
+  <p>通过 Chrome 权限获得的数据只用于本扩展明确展示的视频检测、预览、下载、命名及故障诊断功能。我们遵守 Chrome Web Store 用户数据政策及其 Limited Use 要求：不出售数据，不将数据用于个性化广告，不进行与这些功能无关的数据传输，也不让开发者或其他人员读取用户数据。</p>
+  <h2>6. 联系与变更</h2>
+  <p>发布者为 <a href="https://github.com/van-fe">van-fe</a>。隐私或功能问题可通过 <a href="https://github.com/van-fe/liuguang-m3u8-downloader/issues">项目反馈页面</a>联系，或使用 Chrome 应用商店详情页列出的支持方式。政策发生实质变化时，会在此页更新日期，并按适用要求在产品内披露。</p>
+  <section class="english" id="english" lang="en">
+    <div class="eyebrow">ENGLISH</div><h2>Privacy policy</h2>
+    <p>Publisher: van-fe. Effective and updated: 15 November 2026. This policy covers Liuguang M3U8 Video Downloader. The extension detects HLS/M3U8 and X media, previews selected media, and saves MP4 files locally. Downloads, ordinary AES-128 decryption, merging and file operations run in your browser.</p>
+    <h3>Information handled</h3><p>The extension locally handles website content and media metadata, current tabs, page titles, page/media URLs, relevant resource requests and playback events, task progress, file names/paths/sizes and browser download identifiers. Signed media URLs may contain temporary access tokens; HLS keys are used locally. Requests to original media providers may include their own browser-managed credentials. The extension has no cookies permission and does not extract passwords or export cookies. X public-embed metadata requests omit account credentials. Authorized directory handles are kept in the extension's IndexedDB solely for user-initiated native file renaming.</p>
+    <h3>Recipients and use</h3><p>Only the original media sites/CDNs receive requests needed for playback and downloading. X public-post resolution uses its official public embed endpoint. Those sites receive normal network information, such as IP addresses and requested resources, under their own policies. There is no developer-operated upload, advertising, analytics, proxy or third-party video-parsing service. We do not sell data, use it for advertising/profiling, or allow developer access to it. HTTPS resources use encrypted browser connections; user-selected HTTP resources use HTTP. Opening the public website or support links is subject to GitHub's privacy statement and does not send media URLs, browsing history, credentials or local files from the extension.</p>
+    <h3>Storage and deletion</h3><p>Preferences remain in local extension storage until changed or removed. Detection and tasks are kept in session storage; page navigation/closure removes that page's detections, and Chrome clears session data when the browser session ends. Up to 30 terminal tasks and the latest 10 local diagnostic reports are retained; active tasks have no count cap. Pending download associations expire within 10 minutes. Diagnostics filter media/page addresses, domains, titles and credentials and are never sent automatically. Media staging uses extension-private OPFS and is cleaned after browser saving, cancellation or failure, or when the engine next starts after interruption. Directory handles persist until extension data is cleared or the extension is removed. Browser permissions may require reauthorization.</p>
+    <h3>Your controls and Limited Use</h3><p>You initiate downloads and folder authorization. You can cancel/remove tasks, clear detections and diagnostics, restrict site access, disable or uninstall the extension, or clear extension data. Saved MP4 files, exported diagnostic JSON and Chrome's download history remain under your control. Data obtained through Chrome permissions is used solely for the prominently disclosed detection, preview, downloading, naming and diagnostic features, in compliance with the Chrome Web Store User Data Policy and Limited Use requirements. No unrelated transfer, data sale or personalized advertising is performed. Support is available through the linked public GitHub Issues page; do not post private URLs or credentials there. Material policy changes will be dated here and disclosed as required.</p>
+  </section>
+  <footer>流光 · M3U8 视频下载　·　隐私与源码说明随扩展一起提供。</footer>
+</main></body></html>

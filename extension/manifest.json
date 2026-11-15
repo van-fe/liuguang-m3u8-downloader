@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "流光 · M3U8 视频下载",
+  "version": "1.2.11",
+  "homepage_url": "https://van-fe.github.io/liuguang-m3u8-downloader/",
+  "description": "发现网页中可下载的 HLS/M3U8 视频，支持 MP4 直链与 X 视频解析；先预览，再在本机下载、合并和保存。",
+  "minimum_chrome_version": "116",
+  "permissions": ["webRequest", "downloads", "storage", "unlimitedStorage", "offscreen", "scripting", "tabs"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_title": "流光 · M3U8 视频下载",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "assets/icon16.png", "48": "assets/icon48.png", "128": "assets/icon128.png" }
+  },
+  "icons": { "16": "assets/icon16.png", "48": "assets/icon48.png", "128": "assets/icon128.png" },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["content.js"],
+    "run_at": "document_start",
+    "all_frames": true
+  }, {
+    "matches": ["https://x.com/*", "https://*.x.com/*", "https://twitter.com/*", "https://*.twitter.com/*"],
+    "js": ["x-observer.js"], "world": "MAIN", "run_at": "document_start"
+  }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  }
+}

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>流光 · 视频预览</title><link rel="stylesheet" href="preview.css"></head>
+<body>
+  <main class="player-page">
+    <header><a class="brand" href="popup.html">▷ 流光 <span>M3U8</span></a><span class="badge">视频预览</span></header>
+    <div class="heading"><div><p class="eyebrow">PREVIEW</p><h1 id="title">正在读取视频…</h1><p id="source" class="source"></p></div><button id="download" disabled>下载 MP4 ↓</button></div>
+    <div class="video-shell"><video id="video" controls playsinline preload="metadata"></video></div>
+    <div class="toolbar"><p id="status" role="status" aria-live="polite">准备播放器…</p><div class="player-options"><label for="quality">画质</label><select id="quality"><option value="-1">自动</option></select><button id="retry" class="secondary">重新加载</button></div></div>
+    <div id="error" class="error" role="alert" hidden></div>
+    <p id="download-status" class="download-status" role="status" hidden></p>
+    <p class="hint">可使用播放器控制播放、拖动进度和全屏。下载将采用插件中的自动保存、并发和重试设置。</p>
+  </main>
+  <script src="vendor/hls/hls.min.js"></script><script type="module" src="preview.js"></script>
+</body></html>

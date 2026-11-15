@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>流光 · M3U8</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5.5v13L19 12 9 5.5Z" fill="currentColor"/><path d="M5 6v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="brand"><h1>流光 <span>M3U8</span></h1><p>发现视频，留住精彩。</p></div>
+      <span class="local-pill"><span></span>本机处理</span>
+    </header>
+
+    <div class="page-context"><span class="context-dot" aria-hidden="true"></span><span id="page-host">正在读取当前网页…</span><span id="detected-count">0 个视频源</span></div>
+
+    <nav class="tabs" aria-label="插件视图">
+      <button id="streams-tab" class="tab is-active" type="button" aria-controls="streams-panel" aria-pressed="true">发现视频 <span id="streams-count" class="count">0</span></button>
+      <button id="jobs-tab" class="tab" type="button" aria-controls="jobs-panel" aria-pressed="false">下载任务 <span id="jobs-count" class="count">0</span></button>
+    </nav>
+
+    <main>
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+      <aside id="x-help" class="x-help" aria-label="X 视频使用提示" hidden>
+        <div class="x-help-heading"><span>X 帖子视频</span><a id="x-post-link" target="_blank" rel="noopener noreferrer" hidden>当前帖子 ↗</a></div>
+        <p id="x-page-title" class="x-page-title" hidden></p>
+        <p>打开帖子并播放视频后自动识别。需要登录的帖子，请先在 X 页面登录并确认可以播放。</p>
+      </aside>
+
+      <section id="streams-panel" aria-labelledby="streams-tab">
+        <div class="section-heading"><h2>当前页面的视频</h2><div class="heading-actions"><button id="rescan" class="text-button" type="button" title="重新扫描当前页面">重新检测</button><button id="clear-streams" class="text-button muted" type="button" title="清空当前页面的检测结果">清空</button></div></div>
+        <div id="streams-list" class="card-list"></div>
+        <div id="streams-empty" class="empty-state">
+          <div class="empty-icon" aria-hidden="true"><svg width="29" height="29" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></svg></div>
+          <h3 id="streams-empty-title">等待视频出现</h3>
+          <p id="streams-empty-description">在网页中播放视频，插件会自动发现<br>可下载的 M3U8 或 MP4 视频源。</p>
+          <span id="streams-empty-hint" class="empty-hint">已打开的页面可刷新后重新播放</span>
+        </div>
+      </section>
+
+      <section id="jobs-panel" aria-labelledby="jobs-tab" hidden>
+        <div class="section-heading"><h2>下载与转换</h2><div class="heading-actions jobs-heading-actions"><span class="section-note">关闭弹窗后继续处理</span><button id="clear-jobs" class="text-button muted" type="button" title="取消未完成的任务并清空列表；已保存的文件不会删除" disabled>清空列表</button></div></div>
+        <div id="jobs-list" class="card-list"></div>
+        <div id="jobs-empty" class="empty-state compact"><div class="empty-icon" aria-hidden="true">↓</div><h3>还没有下载任务</h3><p>选择一个视频源，点击下载即可保存为 MP4。</p></div>
+      </section>
+
+      <details id="manual-details" class="manual-section">
+        <summary><span><span class="plus" aria-hidden="true">＋</span> 手动添加视频链接</span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <form id="manual-form">
+          <label for="manual-url">视频或 X 帖子链接</label>
+          <input id="manual-url" name="url" type="url" placeholder="M3U8 / MP4 / https://x.com/用户/status/帖子ID" required autocomplete="off" spellcheck="false">
+          <div class="manual-title-heading"><label for="manual-title">文件名 <span class="optional">选填</span></label><button id="manual-use-page-title" class="text-button" type="button">使用网页标题</button></div>
+          <input id="manual-title" name="title" type="text" placeholder="自动使用网页标题" maxlength="160" autocomplete="off">
+          <div class="manual-bottom"><span>自动选择最高清晰度</span><div class="stream-actions"><button id="manual-preview" class="secondary-button" type="button">预览</button><button id="manual-submit" class="primary-button" type="submit">下载 MP4 <span aria-hidden="true">↓</span></button></div></div>
+        </form>
+      </details>
+
+      <section class="preferences" aria-labelledby="settings-heading">
+        <div class="settings-heading"><h2 id="settings-heading">下载设置</h2><span class="format-pill">MP4</span></div>
+        <label class="auto-save-setting" for="auto-save"><span>自动保存到本地</span><span class="switch"><input id="auto-save" type="checkbox" role="switch" aria-describedby="auto-save-description save-mode-label"><span class="switch-track" aria-hidden="true"></span></span></label>
+        <p id="auto-save-description" class="setting-description">开启后按 Chrome 下载设置保存；浏览器开启询问位置时仍会弹框。</p>
+        <p id="save-mode-label" class="save-mode-label">当前：每次保存前选择位置</p>
+        <div class="download-options">
+          <div class="task-concurrency-setting"><span>同时下载</span><span id="task-concurrency" class="format-pill">无上限</span></div>
+          <label for="download-concurrency"><span>分片并发</span><select id="download-concurrency"><option value="1">1 路</option><option value="2">2 路</option><option value="4" selected>4 路</option><option value="6">6 路</option><option value="8">8 路</option></select></label>
+          <label for="download-retries"><span>失败重试</span><select id="download-retries"><option value="0">不重试</option><option value="1">1 次</option><option value="2">2 次</option><option value="3" selected>3 次</option><option value="5">5 次</option></select></label>
+        </div>
+        <p id="task-concurrency-description" class="setting-description">同时下载的任务数和排队数量均不设上限，新任务直接并行处理。</p>
+        <p class="setting-description retry-description">分片失败时单独重试，其他分片继续下载。</p>
+        <div class="diagnostic-settings">
+          <div class="diagnostic-actions"><button id="export-diagnostics" class="secondary-button" type="button">导出诊断日志</button><button id="clear-diagnostics" class="text-button muted" type="button">清除日志</button></div>
+          <p class="setting-description diagnostic-description">本机记录最近 10 次下载。不记录视频或网页地址、域名、Cookie、登录令牌；仅保留技术诊断信息。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer><span class="footer-dot" aria-hidden="true"></span> 视频在本机合并 · 不支持 DRM 保护视频 <a href="privacy.html" target="_blank" rel="noopener">隐私政策</a></footer>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

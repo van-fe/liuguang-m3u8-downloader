@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>流光 · 授权演示视频</title>
+  <meta name="description" content="用于验证流光扩展发现、预览、并行下载和本机保存的自生成授权演示视频。">
+  <style>
+    :root{color-scheme:light;font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;color:#1f3f38;background:#f4f5ef}
+    *{box-sizing:border-box}body{margin:0;padding:36px 20px}main{max-width:920px;margin:auto}a{color:#147d73}header{display:flex;align-items:center;gap:14px;margin-bottom:32px}.mark{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#17655e;color:#fff}h1{font-size:27px;margin:0}header p{margin:5px 0 0;color:#648078}section{background:#fffef9;border:1px solid #dce4da;border-radius:18px;padding:26px;margin:20px 0}h2{font-size:20px;margin:0 0 13px}p,li{line-height:1.8}video{width:100%;max-height:430px;display:block;background:#132b28;border-radius:10px}button,.button{border:0;border-radius:9px;background:#176f64;color:white;padding:12px 18px;font:inherit;cursor:pointer;display:inline-block;text-decoration:none}button:focus-visible,a:focus-visible{outline:3px solid #64bfa9;outline-offset:4px}.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.secondary{background:#e9f0e8;color:#28574c}.note{color:#617c72;font-size:14px}#status{min-height:1.8em;margin-bottom:0}code{overflow-wrap:anywhere}footer{margin-top:26px;font-size:14px;color:#698178}
+  </style>
+</head>
+<body>
+  <main>
+    <header><div class="mark" aria-hidden="true">▶</div><div><h1>流光 · 授权演示视频</h1><p>发现、预览与保存，都可以从这里开始。</p></div></header>
+    <section>
+      <h2>1. 播放本页演示</h2>
+      <p>以下视频由 FFmpeg 内置测试图形与正弦音生成，没有使用第三方节目或影视片段。你可以下载本页演示媒体来测试流光的功能。</p>
+      <video src="demo.mp4" controls preload="metadata" playsinline aria-label="四秒图形与测试音演示"></video>
+      <p class="note">演示时长约 4 秒，包含 H.264 视频与 AAC 音轨。视频中的测试图形和声音仅用于检查文件是否正常保存与播放。</p>
+    </section>
+    <section>
+      <h2>2. 发现两个 HLS 来源</h2>
+      <p>安装流光后打开或刷新本页，点击下方按钮读取两份播放列表，再打开流光的「发现视频」。你也可以在插件里点击「重新检测」。</p>
+      <button id="detect" type="button">读取 HLS 演示源</button>
+      <p id="status" role="status" aria-live="polite"></p>
+      <div class="links"><a href="sample.m3u8">HLS 演示 A：动态图形</a><a href="sample-b.m3u8">HLS 演示 B：测试色条</a></div>
+      <p class="note">播放列表地址可以手动粘贴到插件中。两个来源内容不同，可以分别命名和同时下载。</p>
+    </section>
+    <section>
+      <h2>3. 验证手动链接与本机保存</h2>
+      <p>展开插件里的「手动添加视频链接」，粘贴下方 MP4 直链并填写名称。下载完成后，可在你主动授权的文件夹内测试原地改名。</p>
+      <div class="links"><a class="button secondary" href="demo.mp4">打开 MP4 演示直链</a><a class="button secondary" href="../privacy.html">查看隐私政策</a></div>
+      <p class="note">本页不需要账号、Cookie、会员或访问令牌，没有统计代码和第三方脚本。浏览器仍会为加载本页和演示媒体向页面托管服务发送普通网络请求。</p>
+    </section>
+    <footer>本页只授权演示媒体的测试下载。使用流光下载其他媒体前，请确认自己拥有相应下载权利。流光不绕过 DRM、付费墙、登录或网站访问限制。</footer>
+  </main>
+  <script>
+    const button = document.getElementById('detect');
+    button.addEventListener('click', async () => {
+      button.disabled = true;
+      const status = document.getElementById('status');
+      status.textContent = '正在读取演示播放列表…';
+      try {
+        const responses = await Promise.all(['sample.m3u8', 'sample-b.m3u8'].map(file => fetch(file, { cache: 'no-store' })));
+        if (responses.some(response => !response.ok)) throw new Error('媒体文件未就绪');
+        await Promise.all(responses.map(response => response.text()));
+        status.textContent = '已读取两个 HLS 来源。现在打开流光，在「发现视频」中查看。';
+      } catch {
+        status.textContent = '演示媒体未能读取。请确认文件已完整托管，然后刷新重试。';
+      } finally { button.disabled = false; }
+    });
+  </script>
+</body>
+</html>

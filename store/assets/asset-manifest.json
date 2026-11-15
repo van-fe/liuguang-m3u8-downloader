@@ -1,0 +1,70 @@
+{
+  "version": "1.2.11",
+  "media": "FFmpeg self-generated testsrc2 video and sine audio",
+  "sources": [
+    {
+      "filename": "raw/discovery.png",
+      "origin": "actual production popup, real automatic HLS detection"
+    },
+    {
+      "filename": "raw/parallel.png",
+      "origin": "actual production popup, 3 genuine partial MP4 responses; 1 real HLS conversion completed before capture"
+    },
+    {
+      "filename": "raw/settings.png",
+      "origin": "actual production preferences section"
+    },
+    {
+      "filename": "raw/naming.png",
+      "origin": "actual production discovery name editor, user input before confirmation"
+    }
+  ],
+  "files": [
+    {
+      "filename": "screenshot-01-discovery-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 252955
+    },
+    {
+      "filename": "screenshot-02-parallel-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 237817
+    },
+    {
+      "filename": "screenshot-03-local-settings-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 244851
+    },
+    {
+      "filename": "screenshot-04-naming-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 247919
+    },
+    {
+      "filename": "icon-128.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 1616
+    },
+    {
+      "filename": "promo-440x280.png",
+      "width": 440,
+      "height": 280,
+      "bytes": 22427
+    },
+    {
+      "filename": "marquee-1400x560.png",
+      "width": 1400,
+      "height": 560,
+      "bytes": 64063
+    }
+  ],
+  "pageErrors": [],
+  "actualConcurrentTransfers": 3,
+  "officialImageRequirements": "https://developer.chrome.com/docs/webstore/images",
+  "screenshotPolicy": "Composites use unmodified real UI captures; only surrounding editorial layout is generated. Demo media is self-generated. No user browser data or copyrighted third-party media is used."
+}

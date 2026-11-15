@@ -1,0 +1,37 @@
+Review notes — Liuguang M3U8 Video Downloader
+Target version: 1.2.11
+Publisher: van-fe
+
+Purpose
+Discover user-authorized HLS/M3U8 sources on a web page, preview them, and download/remux media locally into MP4. Direct MP4 URLs and some X post media can also be resolved. No extension account or developer backend is required.
+
+Reproducible, authorized demo
+https://van-fe.github.io/liuguang-m3u8-downloader/demo/
+The demo media is generated from FFmpeg test patterns and a sine tone specifically for this extension review. It does not contain third-party programmes or user data. The demo page grants permission to download these samples for testing.
+
+Basic flow
+1. Install the submitted package in Chrome 116 or later. Keep Chrome running.
+2. Open the demo URL after installation. If it was already open, reload it. Play the MP4 preview and click the demo page's HLS detection button.
+3. Open the extension popup. “发现视频” means discovered videos. The local test HLS source should appear. “重新检测” rescans the current page if needed.
+4. Choose “预览” to open the extension's local preview page. Close the preview or return to the demo tab.
+5. Edit the detected title if desired and choose “下载 MP4”. “下载任务” shows download, merge and save progress. The default save mode opens Chrome's Save As dialog.
+6. Alternatively expand “手动添加视频链接” and paste the direct demo MP4 URL: https://van-fe.github.io/liuguang-m3u8-downloader/demo/demo.mp4 . Enter a filename and start the download.
+7. “自动保存到本地” uses Chrome's download settings. It does not override a browser setting that asks for the destination. Existing Chrome download-name extensions can affect Save As default filenames; automatic save uses an extension-owned native link.
+8. Start multiple authorized sample tasks with different titles. The extension imposes no fixed task/queue count; individual files keep their own progress, cancellation and output. “分片并发” is per-video HLS segment concurrency, not a task-count setting. Browser transport/resource limits may still affect throughput.
+9. Cancel one running task; the other tasks should remain. Clearing/removing tasks cancels unfinished work but does not delete MP4 files already saved to the user's download directory.
+
+Local rename (optional feature)
+Click a completed task name. Enter a new name. The task card requests selection of the actual download folder. Only after the user selects it and grants read/write access does a native in-place rename occur. No separate helper application or native messaging host is used. A later rename can restore permission from the user's gesture. Cancelling permission, a missing file, an existing target name or unsupported native rename preserves the original file/name; no copy-and-delete fallback is used.
+
+Code and permissions
+All JavaScript, workers, HLS library and FFmpeg WebAssembly are packaged locally. No remote executable code is fetched. webRequest, content scripts and tabs associate media URLs with the current page; scripting supports a user-requested rescan/title lookup; downloads saves the output; offscreen keeps local processing alive after the popup closes; storage/unlimitedStorage support settings, per-session state and OPFS video staging.
+
+Data handling
+Media/page URLs, titles, website media data and detection-related request/playback activity are processed for this feature. Signed media URLs may contain authentication tokens and are held locally in session state. Media requests may include browser-managed site credentials; there is no cookies API, password collection, analytics or developer upload backend. X public embed requests omit credentials. Users can export sanitized technical diagnostics manually. Details: https://van-fe.github.io/liuguang-m3u8-downloader/privacy.html .
+
+Supported scope
+Use only content the user owns or is authorized to download. The extension does not bypass DRM, paywalls, login or site access restrictions. Continuous live recording, SAMPLE-AES and Bilibili DASH are not supported; no YouTube downloader is provided. X support depends on the actual accessible media and site responses; it is not guaranteed for every post. Public X metadata resolution is a separate optional path and is not needed to test the core HLS/MP4 features.
+
+Support and source
+https://github.com/van-fe/liuguang-m3u8-downloader/issues
+https://github.com/van-fe/liuguang-m3u8-downloader

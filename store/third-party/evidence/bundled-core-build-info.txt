@@ -1,0 +1,272 @@
+COMMAND: ffmpeg -version
+ffmpeg version 5.1.4 Copyright (c) 2000-2023 the FFmpeg developers
+built with emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.40 (5c27e79dd0a9c4e27ef2326841698cdd4f6b5784)
+configuration: --target-os=none --arch=x86_32 --enable-cross-compile --disable-asm --disable-stripping --disable-programs --disable-doc --disable-debug --disable-runtime-cpudetect --disable-autodetect --nm=emnm --ar=emar --ranlib=emranlib --cc=emcc --cxx=em++ --objcc=emcc --dep-cc=emcc --extra-cflags='-I/opt/include -O3 -msimd128' --extra-cxxflags='-I/opt/include -O3 -msimd128' --disable-pthreads --disable-w32threads --disable-os2threads --enable-gpl --enable-libx264 --enable-libx265 --enable-libvpx --enable-libmp3lame --enable-libtheora --enable-libvorbis --enable-libopus --enable-zlib --enable-libwebp --enable-libfreetype --enable-libfribidi --enable-libass --enable-libzimg
+libavutil      57. 28.100 / 57. 28.100
+libavcodec     59. 37.100 / 59. 37.100
+libavformat    59. 27.100 / 59. 27.100
+libavdevice    59.  7.100 / 59.  7.100
+libavfilter     8. 44.100 /  8. 44.100
+libswscale      6.  7.100 /  6.  7.100
+libswresample   4.  7.100 /  4.  7.100
+libpostproc    56.  6.100 / 56.  6.100
+Aborted()
+EXIT: 0
+COMMAND: ffmpeg -buildconf
+ffmpeg version 5.1.4 Copyright (c) 2000-2023 the FFmpeg developers
+  built with emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.40 (5c27e79dd0a9c4e27ef2326841698cdd4f6b5784)
+  configuration: --target-os=none --arch=x86_32 --enable-cross-compile --disable-asm --disable-stripping --disable-programs --disable-doc --disable-debug --disable-runtime-cpudetect --disable-autodetect --nm=emnm --ar=emar --ranlib=emranlib --cc=emcc --cxx=em++ --objcc=emcc --dep-cc=emcc --extra-cflags='-I/opt/include -O3 -msimd128' --extra-cxxflags='-I/opt/include -O3 -msimd128' --disable-pthreads --disable-w32threads --disable-os2threads --enable-gpl --enable-libx264 --enable-libx265 --enable-libvpx --enable-libmp3lame --enable-libtheora --enable-libvorbis --enable-libopus --enable-zlib --enable-libwebp --enable-libfreetype --enable-libfribidi --enable-libass --enable-libzimg
+  libavutil      57. 28.100 / 57. 28.100
+  libavcodec     59. 37.100 / 59. 37.100
+  libavformat    59. 27.100 / 59. 27.100
+  libavdevice    59.  7.100 / 59.  7.100
+  libavfilter     8. 44.100 /  8. 44.100
+  libswscale      6.  7.100 /  6.  7.100
+  libswresample   4.  7.100 /  4.  7.100
+  libpostproc    56.  6.100 / 56.  6.100
+Splitting the commandline.
+Reading option '-nostdin' ... matched as option 'stdin' (enable or disable interaction on standard input) with argument 0.
+Reading option '-y' ... matched as option 'y' (overwrite output files) with argument '1'.
+Reading option '-buildconf' ... matched as option 'buildconf' (show build configuration) with argument '(null)'.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option nostdin (enable or disable interaction on standard input) with argument 0.
+Applying option y (overwrite output files) with argument 1.
+Applying option buildconf (show build configuration) with argument (null).
+
+  configuration:
+    --target-os=none
+    --arch=x86_32
+    --enable-cross-compile
+    --disable-asm
+    --disable-stripping
+    --disable-programs
+    --disable-doc
+    --disable-debug
+    --disable-runtime-cpudetect
+    --disable-autodetect
+    --nm=emnm
+    --ar=emar
+    --ranlib=emranlib
+    --cc=emcc
+    --cxx=em++
+    --objcc=emcc
+    --dep-cc=emcc
+    --extra-cflags='-I/opt/include -O3 -msimd128'
+    --extra-cxxflags='-I/opt/include -O3 -msimd128'
+    --disable-pthreads
+    --disable-w32threads
+    --disable-os2threads
+    --enable-gpl
+    --enable-libx264
+    --enable-libx265
+    --enable-libvpx
+    --enable-libmp3lame
+    --enable-libtheora
+    --enable-libvorbis
+    --enable-libopus
+    --enable-zlib
+    --enable-libwebp
+    --enable-libfreetype
+    --enable-libfribidi
+    --enable-libass
+    --enable-libzimg
+Aborted()
+EXIT: 0
+COMMAND: ffmpeg -hide_banner -f lavfi -i color=s=16x16:r=1 -t 1 -c:v libx264 out.mp4
+Splitting the commandline.
+Reading option '-nostdin' ... matched as option 'stdin' (enable or disable interaction on standard input) with argument 0.
+Reading option '-y' ... matched as option 'y' (overwrite output files) with argument '1'.
+Reading option '-hide_banner' ... matched as option 'hide_banner' (do not show program banner) with argument '1'.
+Reading option '-f' ... matched as option 'f' (force format) with argument 'lavfi'.
+Reading option '-i' ... matched as input url with argument 'color=s=16x16:r=1'.
+Reading option '-t' ... matched as option 't' (record or transcode "duration" seconds of audio/video) with argument '1'.
+Reading option '-c:v' ... matched as option 'c' (codec name) with argument 'libx264'.
+Reading option 'out.mp4' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option nostdin (enable or disable interaction on standard input) with argument 0.
+Applying option y (overwrite output files) with argument 1.
+Applying option hide_banner (do not show program banner) with argument 1.
+Successfully parsed a group of options.
+Parsing a group of options: input url color=s=16x16:r=1.
+Applying option f (force format) with argument lavfi.
+Successfully parsed a group of options.
+Opening an input file: color=s=16x16:r=1.
+Setting 's' to value '16x16'
+Setting 'r' to value '1'
+size:16x16 rate:1/1 duration:-1.000000 sar:1/1
+query_formats: 2 queried, 1 merged, 0 already done, 0 delayed
+max_analyze_duration 5000000 reached at 5000000 microseconds st:0
+rfps: 1.000000 0.000000
+rfps: 2.000000 0.000000
+rfps: 2.000000 0.000000
+rfps: 3.000000 0.000000
+rfps: 4.000000 0.000000
+rfps: 4.000000 0.000000
+rfps: 5.000000 0.000000
+rfps: 6.000000 0.000000
+rfps: 6.000000 0.000000
+rfps: 7.000000 0.000000
+rfps: 8.000000 0.000000
+rfps: 8.000000 0.000000
+rfps: 9.000000 0.000000
+rfps: 10.000000 0.000000
+rfps: 10.000000 0.000000
+rfps: 11.000000 0.000000
+rfps: 12.000000 0.000000
+rfps: 12.000000 0.000000
+rfps: 13.000000 0.000000
+rfps: 14.000000 0.000000
+rfps: 14.000000 0.000000
+rfps: 15.000000 0.000000
+rfps: 16.000000 0.000000
+rfps: 16.000000 0.000000
+rfps: 17.000000 0.000000
+rfps: 18.000000 0.000000
+rfps: 18.000000 0.000000
+rfps: 19.000000 0.000000
+rfps: 20.000000 0.000000
+rfps: 20.000000 0.000000
+rfps: 21.000000 0.000000
+rfps: 22.000000 0.000000
+rfps: 22.000000 0.000000
+rfps: 23.000000 0.000000
+rfps: 24.000000 0.000000
+rfps: 24.000000 0.000000
+rfps: 25.000000 0.000000
+rfps: 26.000000 0.000000
+rfps: 26.000000 0.000000
+rfps: 27.000000 0.000000
+rfps: 28.000000 0.000000
+rfps: 28.000000 0.000000
+rfps: 29.000000 0.000000
+rfps: 30.000000 0.000000
+rfps: 30.000000 0.000000
+rfps: 31.000000 0.000000
+rfps: 32.000000 0.000000
+rfps: 32.000000 0.000000
+rfps: 33.000000 0.000000
+rfps: 34.000000 0.000000
+rfps: 34.000000 0.000000
+rfps: 35.000000 0.000000
+rfps: 36.000000 0.000000
+rfps: 36.000000 0.000000
+rfps: 37.000000 0.000000
+rfps: 38.000000 0.000000
+rfps: 38.000000 0.000000
+rfps: 39.000000 0.000000
+rfps: 40.000000 0.000000
+rfps: 40.000000 0.000000
+rfps: 41.000000 0.000000
+rfps: 42.000000 0.000000
+rfps: 42.000000 0.000000
+rfps: 43.000000 0.000000
+rfps: 44.000000 0.000000
+rfps: 44.000000 0.000000
+rfps: 45.000000 0.000000
+rfps: 46.000000 0.000000
+rfps: 46.000000 0.000000
+rfps: 47.000000 0.000000
+rfps: 48.000000 0.000000
+rfps: 48.000000 0.000000
+rfps: 49.000000 0.000000
+rfps: 50.000000 0.000000
+rfps: 50.000000 0.000000
+rfps: 51.000000 0.000000
+rfps: 52.000000 0.000000
+rfps: 52.000000 0.000000
+rfps: 53.000000 0.000000
+rfps: 54.000000 0.000000
+rfps: 54.000000 0.000000
+rfps: 55.000000 0.000000
+rfps: 56.000000 0.000000
+rfps: 56.000000 0.000000
+rfps: 57.000000 0.000000
+rfps: 58.000000 0.000000
+rfps: 58.000000 0.000000
+rfps: 59.000000 0.000000
+rfps: 60.000000 0.000000
+rfps: 60.000000 0.000000
+rfps: 80.000000 0.000000
+rfps: 80.000000 0.000000
+rfps: 120.000000 0.000000
+rfps: 120.000000 0.000000
+rfps: 240.000000 0.000000
+rfps: 240.000000 0.000000
+rfps: 23.976024 0.001677
+rfps: 23.976024 0.001677
+rfps: 29.970030 0.002620
+rfps: 29.970030 0.002620
+rfps: 59.940060 0.010479
+rfps: 59.940060 0.010479
+rfps: 11.988012 0.000419
+rfps: 11.988012 0.000419
+rfps: 14.985015 0.000655
+rfps: 14.985015 0.000655
+rfps: 47.952048 0.006707
+rfps: 47.952048 0.006707
+stream 0: start_time: 0 duration: NOPTS
+format: start_time: 0 duration: NOPTS (estimate from bit rate) bitrate=0 kb/s
+Input #0, lavfi, from 'color=s=16x16:r=1':
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0, 7, 1/1: Video: rawvideo (I420 / 0x30323449), yuv420p, 16x16 [SAR 1:1 DAR 1:1], 1 fps, 1 tbr, 1 tbn
+Successfully opened the file.
+Parsing a group of options: output url out.mp4.
+Applying option t (record or transcode "duration" seconds of audio/video) with argument 1.
+Applying option c:v (codec name) with argument libx264.
+Successfully parsed a group of options.
+Opening an output file: out.mp4.
+Setting default whitelist 'file,crypto,data'
+Successfully opened the file.
+Stream mapping:
+  Stream #0:0 -> #0:0 (rawvideo (native) -> h264 (libx264))
+cur_dts is invalid st:0 (0) [init:0 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+PACKET SIZE: 384, STRIDE: 24
+Setting 'video_size' to value '16x16'
+Setting 'pix_fmt' to value '0'
+Setting 'time_base' to value '1/1'
+Setting 'pixel_aspect' to value '1/1'
+Setting 'frame_rate' to value '1/1'
+w:16 h:16 pixfmt:yuv420p tb:1/1 fr:1/1 sar:1/1
+Setting 'pix_fmts' to value 'yuv420p|yuvj420p|yuv422p|yuvj422p|yuv444p|yuvj444p|nv12|nv16|nv21|yuv420p10le|yuv422p10le|yuv444p10le|nv20le|gray|gray10le'
+query_formats: 5 queried, 4 merged, 0 already done, 0 delayed
+using SAR=1/1
+using cpu capabilities: none!
+profile High, level 1.0, 4:2:0, 8-bit
+264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=1 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=1 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'out.mp4':
+  Metadata:
+    encoder         : Lavf59.27.100
+  Stream #0:0, 0, 1/16384: Video: h264 (avc1 / 0x31637661), yuv420p(progressive), 16x16 [SAR 1:1 DAR 1:1], q=2-31, 1 fps, 16384 tbn
+    Metadata:
+      encoder         : Lavc59.37.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+Clipping frame in rate conversion by 0.000008
+frame=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    
+cur_dts is invalid st:0 (0) [init:1 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+PACKET SIZE: 384, STRIDE: 24
+cur_dts is invalid st:0 (0) [init:1 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+EOF on sink link out_0_0:default.
+No more output streams to write to, finishing.
+frame=   0 QP=2.00 NAL=3 Slice:I Poc:0   I:1    P:0    SKIP:0    size=20 bytes
+frame=    1 fps=0.0 q=17.0 Lsize=       1kB time=00:00:00.00 bitrate=200918.0kbits/s speed=0.00275x    
+video:1kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 120.749283%
+Input file #0 (color=s=16x16:r=1):
+  Input stream #0:0 (video): 2 packets read (768 bytes); 2 frames decoded; 
+  Total: 2 packets (768 bytes) demuxed
+Output file #0 (out.mp4):
+  Output stream #0:0 (video): 1 frames encoded; 1 packets muxed (694 bytes); 
+  Total: 1 packets (694 bytes) muxed
+Statistics: 1536 bytes written, 2 seeks, 4 writeouts
+2 frames successfully decoded, 0 decoding errors
+frame I:1     Avg QP: 2.00  size:    20
+mb I  I16..4: 100.0%  0.0%  0.0%
+8x8 transform intra:0.0%
+coded y,uvDC,uvAC intra: 0.0% 0.0% 0.0%
+i16 v,h,dc,p:  0%  0% 100%  0%
+i8c dc,h,v,p: 100%  0%  0%  0%
+kb/s:0.16
+Aborted()
+EXIT: 0
