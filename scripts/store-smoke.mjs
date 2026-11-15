@@ -61,8 +61,20 @@ async function waitFor(read, predicate, label, timeout = 60000) {
 async function checkUrl(url, { method = 'GET', text } = {}) {
   const response = await fetch(url, { method, redirect: 'follow', signal: AbortSignal.timeout(45000) });
   assert.equal(response.status, 200, `${method} ${url}`);
-  const item = { url, status: response.status, finalUrl: response.url };
-  if (text) assert.match(await response.text(), text, url);
+  const destination = new URL(response.url);
+  const hasRedirectQuery = Boolean(destination.search);
+  destination.search = '';
+  destination.hash = '';
+  const item = { url, status: response.status, finalUrl: destination.href, ...(hasRedirectQuery ? { redirectQueryRedacted: true } : {}) };
+  if (text) {
+    const body = await response.text();
+    assert.match(body, text, url);
+    if (url === publisher.privacyUrl) {
+      const packaged = await readFile(path.join(extracted, 'privacy.html'), 'utf8');
+      assert.equal(body.replaceAll('\r\n', '\n'), packaged.replaceAll('\r\n', '\n'), 'Public and packaged privacy policies must match.');
+      report.publicPrivacyMatchesPackage = true;
+    }
+  }
   else if (method !== 'HEAD') await response.arrayBuffer();
   report.urls.push(item);
 }
@@ -100,6 +112,7 @@ try {
   await publicPage.setViewportSize({ width: 1440, height: 1000 });
   let response = await publicPage.goto(publisher.homepageUrl, { waitUntil: 'domcontentloaded' });
   assert.equal(response.status(), 200);
+  assert.ok((await publicPage.locator('.meta').textContent()).includes(`v${version}`), 'The live homepage must identify this release.');
   for (const image of await publicPage.locator('img').all()) {
     await image.scrollIntoViewIfNeeded();
     await image.evaluate(node => node.decode());
@@ -128,7 +141,7 @@ try {
   const getState = () => send('GET_STATE', { tabId });
   const detected = await waitFor(getState, state => state.streams.filter(stream => stream.url.startsWith(publisher.demoUrl) && stream.url.includes('.m3u8')).length >= 2, 'The public review page did not expose both real HLS sources');
   const [privacy] = await Promise.all([context.waitForEvent('page'), popup.locator('footer a[href="privacy.html"]').click()]);
-  await privacy.waitForLoadState('domcontentloaded');
+  await privacy.waitForURL(`chrome-extension://${id}/privacy.html`, { waitUntil: 'domcontentloaded' });
   assert.equal(privacy.url(), `chrome-extension://${id}/privacy.html`);
   assert.equal(await privacy.locator('h1').textContent(), '隐私政策');
   report.localPrivacyFooter = { url: privacy.url(), opened: true };
@@ -142,7 +155,7 @@ try {
   await popup.locator('#streams-tab').click();
   await popup.locator(`button[data-download-stream-id="${hlsSource.id}"]`).click();
   const mp4Title = '商店验证 · MP4 演示';
-  await popup.locator('#manual-details').evaluate(node => { node.open = true; });
+  await popup.locator('#manual-details summary').click();
   await popup.locator('#manual-url').fill(new URL('demo.mp4', publisher.demoUrl).href);
   await popup.locator('#manual-title').fill(mp4Title);
   await popup.locator('#manual-submit').click();
