@@ -19,6 +19,8 @@ const xObserver = (await readFile(path.join(root, 'extension', 'x-observer.js'),
 if (/^\s*(?:import|export)\s/m.test(xParser + xObserver)) throw new Error('X observer bundle contains an unresolved module import or export');
 await writeFile(path.join(output, 'x-observer.js'), `(() => {\n${xParser}\n${xObserver}\n})();\n`);
 await cp(path.join(root, 'licenses'), path.join(output, 'licenses'), { recursive: true, force: true });
+await cp(path.join(root, 'store', 'third-party', 'licenses'), path.join(output, 'licenses', 'upstream-components'), { recursive: true, force: true });
+await cp(path.join(root, 'store', 'third-party', 'sources.json'), path.join(output, 'licenses', 'third-party-sources.json'));
 await mkdir(path.join(output, 'vendor', 'hls'), { recursive: true });
 await cp(path.join(root, 'node_modules', 'hls.js', 'dist', 'hls.min.js'), path.join(output, 'vendor', 'hls', 'hls.min.js'));
 await cp(path.join(root, 'node_modules', 'hls.js', 'LICENSE'), path.join(output, 'licenses', 'hls.js-LICENSE'));

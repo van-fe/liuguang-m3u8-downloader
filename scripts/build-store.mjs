@@ -128,7 +128,7 @@ try {
   for (const name of ['manifest.json', 'privacy.html', 'LICENSE', 'SOURCE_CODE.md', 'THIRD_PARTY_NOTICES.md', 'background.js', 'offscreen.js', 'vendor/ffmpeg-core/ffmpeg-core.wasm', 'vendor/ffmpeg-core/ffmpeg-core.js']) assert.ok(paths.has(name), `Missing runtime file ${name}`);
   for (const name of paths) {
     assert.ok(!name.split('/').some(part => part.startsWith('.')) && !/(?:^|\/)(?:work|test-results|node_modules|profile|profiles)(?:\/|$)|\.(?:crx|pem|key)$/i.test(name), `Unexpected private/development package entry: ${name}`);
-    assert.ok(canonicalRuntime.has(name) || ['LICENSE', 'SOURCE_CODE.md', 'THIRD_PARTY_NOTICES.md'].includes(name) || /^assets\/icon(?:16|32|48|128)\.png$/.test(name) || name.startsWith('licenses/') || name.startsWith('vendor/ffmpeg/') || name.startsWith('vendor/ffmpeg-core/') || name === 'vendor/hls/hls.min.js', `Unexpected stale build entry: ${name}`);
+    assert.ok(canonicalRuntime.has(name) || ['LICENSE', 'COPYRIGHT', 'SOURCE_CODE.md', 'THIRD_PARTY_NOTICES.md'].includes(name) || /^assets\/icon(?:16|32|48|128)\.png$/.test(name) || name.startsWith('licenses/') || name.startsWith('vendor/ffmpeg/') || name.startsWith('vendor/ffmpeg-core/') || name === 'vendor/hls/hls.min.js', `Unexpected stale build entry: ${name}`);
   }
   assert.ok(manifest.content_security_policy.extension_pages.includes("'wasm-unsafe-eval'"));
   assert.ok(!/(?:^|\s)'unsafe-eval'(?:\s|;|$)/.test(manifest.content_security_policy.extension_pages));
@@ -163,7 +163,7 @@ try {
     recursive: true,
     filter: source => !source.includes(`${path.sep}archives${path.sep}`) && path.basename(source) !== 'archives' && !/\.(?:zip|gz|xz|bz2|7z|tar)$/i.test(source),
   });
-  for (const filename of ['LICENSE', 'THIRD_PARTY_NOTICES.md']) await cp(path.join(root, filename), path.join(materials, filename));
+  for (const filename of ['LICENSE', 'COPYRIGHT', 'THIRD_PARTY_NOTICES.md']) await cp(path.join(root, filename), path.join(materials, filename));
   await cp(path.join(store, 'publisher.json'), path.join(materials, 'publisher.json'));
   await cp(path.join(store, 'UPLOAD-GUIDE.md'), path.join(materials, 'UPLOAD-GUIDE.md'));
   await writeFile(path.join(materials, 'SOURCE_CODE.md'), sourceText);

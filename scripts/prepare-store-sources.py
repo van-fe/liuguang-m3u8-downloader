@@ -16,7 +16,7 @@ root = pathlib.Path(__file__).resolve().parent.parent
 output = (root / 'store' / 'third-party').resolve()
 assert output.is_relative_to(root) and output.drive.lower() == root.drive.lower()
 manifest = json.loads((output / 'sources.json').read_text(encoding='utf-8'))
-names = re.compile(r'(^|[._-])(licen[sc]e|copying|copyright|notice|patents?)([._-]|$)', re.I)
+names = re.compile(r'(^|[._-])(licen[sc]es?|copying|copyrights?|notices?|patents?|authors|credits)([._-]|$)|^(?:FTL|[AL]?GPLv?[0-9.-]*|BSD|ZLIB)(?:\.[a-z0-9]+)?$', re.I)
 license_index = []
 
 
